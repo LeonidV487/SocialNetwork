@@ -1,0 +1,18 @@
+.nav{
+    grid-area: n;
+    background-color: whitesmoke;
+}
+
+.item{
+    margin-left: 26%;
+    font: 17pt Calibri;
+    color: black;
+}
+
+.item.first{
+    margin-top: 15%;
+}
+
+.item.last{
+    margin-top: 30%;
+}
