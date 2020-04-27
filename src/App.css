@@ -8,3 +8,8 @@
     grid-template-rows: 4.5rem 1fr;
     grid-template-columns: 1.4fr 10fr;
 }
+
+.app-wrapper-content{
+    grid-area: c;
+    background-color: whitesmoke;
+}
