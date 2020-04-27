@@ -1,28 +1,20 @@
 import React from "react";
-import  classes from './Profile.module.css';
+import classes from './MyPosts.module.css';
+import Post from "./Post/Post";
 
-const Profile = () => {
-    return  <div className={classes.content}>
-        <div>
-            <img
-                src='https://thumbs.dreamstime.com/b/wide-black-brick-wall-texture-dark-gray-brickwork-background-wide-black-brick-wall-texture-spacious-dark-gray-masonry-background-124596974.jpg'/>
-        </div>
-        <div>ava + description</div>
+const MyPosts = () => {
+    return (
         <div>
             My posts
             <div>
-                New post
-            </div>
-            <div>
-                <div>
-                    post1
-                </div>
-                <div>
-                    post2
-                </div>
+                <Post message = "It's my first message!" likeCount = '10'/>
+                <Post message = "Hi, how are you?" likeCount = '30'/>
+                <Post/>
+                <Post/>
+                <Post/>
             </div>
         </div>
-    </div>
+    )
 }
 
-export default Profile;
+export default MyPosts;
