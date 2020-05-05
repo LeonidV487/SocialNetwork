@@ -3,10 +3,15 @@
     background-color: whitesmoke;
 }
 
-.item{
+.item a {
     margin-left: 26%;
     font: 17pt Calibri;
+    text-decoration: none;
     color: black;
+}
+
+.item a.activeLink{
+    color: brown;
 }
 
 .item.first{

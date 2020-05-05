@@ -14,7 +14,7 @@ const MyPosts = () => {
                 <Post/>
             </div>
         </div>
-    )
+    );
 }
 
 export default MyPosts;
