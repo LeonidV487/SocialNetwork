@@ -1,0 +1,21 @@
+.dialogMenu {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+
+.dialogs {
+    padding-top: 2rem;
+    padding-left: 3rem;
+}
+
+.dialogs .dialog {
+    font: 14pt Calibri;
+}
+
+.messages {
+    padding-top: 2rem;
+}
+
+.messages .message{
+    font: 14pt Calibri;
+}
