@@ -1,4 +1,7 @@
-.content{
-    grid-area: c;
-    background-color: whitesmoke;
+    .postBlock {
+    padding-left: 13rem;
+}
+
+.posts{
+    padding-top: 1rem;
 }
