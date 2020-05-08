@@ -10,14 +10,18 @@ import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
 
 const App = (props) => {
+
+    let DialogTest = () => <Dialogs messages={props.messages} dialogs={props.dialogs}/>;
+    let ProfileTest = () => <Profile posts={props.posts}/>;
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <NavBar/>
                 <div className='app-wrapper-content'>
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialogs}/>
+                    <Route path='/profile' component={ProfileTest}/>
+                    <Route path='/dialogs' component={DialogTest}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>

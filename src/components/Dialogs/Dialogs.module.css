@@ -8,20 +8,6 @@
     padding-left: 3rem;
 }
 
-.dialog a {
-    font: 14pt Calibri;
-    text-decoration: none;
-    color: black;
-}
-
-.dialog a.activeLink{
-    color: darkorange;
-}
-
 .messages {
     padding-top: 2rem;
-}
-
-.messages .message{
-    font: 14pt Calibri;
 }

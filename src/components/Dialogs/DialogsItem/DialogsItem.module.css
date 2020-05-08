@@ -1,0 +1,9 @@
+.dialog a {
+    font: 14pt Calibri;
+    text-decoration: none;
+    color: black;
+}
+
+.dialog a.activeLink{
+    color: darkorange;
+}

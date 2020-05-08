@@ -1,7 +1,8 @@
-    .postBlock {
+.postBlock {
     padding-left: 12rem;
+    padding-bottom: 10rem;
 }
 
-.posts{
+.posts {
     padding-top: 1rem;
 }

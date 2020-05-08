@@ -1,9 +1,18 @@
 .item img{
-    width: 5%;
+    width: 3.5rem;
     border-radius: 100%;
 }
 
 .likes{
     width: 47rem;
     text-align: end;
+}
+
+.postWrapper{
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+
+.message{
+    padding-top: 1.2rem;
 }
