@@ -1,9 +1,20 @@
 .dialog a {
-    font: 14pt Calibri;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
     text-decoration: none;
     color: black;
+    font: 14pt Calibri;
 }
 
-.dialog a.activeLink{
+.dialog .name{
+    padding-top: 1.7rem;
+    padding-left: 0.7rem;
+}
+
+.dialog a.activeLink {
     color: darkorange;
+}
+
+.dialog img {
+    border-radius: 50%;
 }

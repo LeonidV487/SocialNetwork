@@ -16,6 +16,16 @@
     color: brown;
 }
 
-.item.last{
+.item.settings{
     padding-top: 3rem;
+}
+
+.item.friends{
+    padding-top: 6rem;
+}
+
+.friendItem{
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
 }
