@@ -1,3 +1,5 @@
+import {renderEntireTree} from "../render";
+
 let state = {
     profilePage: {
         posts: [
@@ -10,7 +12,11 @@ let state = {
             {id: 1, name: "Leonid", image: "https://icon-icons.com/icons2/1371/PNG/72/muslimman_90813.png"},
             {id: 2, name: "Valeriy", image: "https://icon-icons.com/icons2/1371/PNG/72/donaldtrump_90831.png"},
             {id: 3, name: "Artemiy", image: "https://icon-icons.com/icons2/1371/PNG/72/nikolatesla_90830.png"},
-            {id: 4, name: "Anastasia", image: "https://icon-icons.com/icons2/1371/PNG/72/traditionaljapanesewoman_90815.png"},
+            {
+                id: 4,
+                name: "Anastasia",
+                image: "https://icon-icons.com/icons2/1371/PNG/72/traditionaljapanesewoman_90815.png"
+            },
             {id: 5, name: "George", image: "https://icon-icons.com/icons2/1371/PNG/72/luissuarez_90807.png"},
             {id: 6, name: "Allen", image: "https://icon-icons.com/icons2/1371/PNG/72/cristianoronaldo_90805.png"},
         ],
@@ -28,11 +34,26 @@ let state = {
             {id: 1, name: "Leonid", image: "https://icon-icons.com/icons2/1371/PNG/72/muslimman_90813.png"},
             {id: 2, name: "Valeriy", image: "https://icon-icons.com/icons2/1371/PNG/72/donaldtrump_90831.png"},
             {id: 3, name: "Artemiy", image: "https://icon-icons.com/icons2/1371/PNG/72/nikolatesla_90830.png"},
-            {id: 4, name: "Anastasia", image: "https://icon-icons.com/icons2/1371/PNG/72/traditionaljapanesewoman_90815.png"},
+            {
+                id: 4,
+                name: "Anastasia",
+                image: "https://icon-icons.com/icons2/1371/PNG/72/traditionaljapanesewoman_90815.png"
+            },
             {id: 5, name: "George", image: "https://icon-icons.com/icons2/1371/PNG/72/luissuarez_90807.png"},
             {id: 6, name: "Allen", image: "https://icon-icons.com/icons2/1371/PNG/72/cristianoronaldo_90805.png"},
         ],
     }
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likeCount: 0
+    };
+
+    state.profilePage.posts.push(newPost);
+    renderEntireTree(state);
 }
 
 export default state;

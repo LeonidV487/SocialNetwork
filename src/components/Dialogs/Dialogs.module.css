@@ -10,4 +10,10 @@
 
 .messages {
     padding-top: 2rem;
+    position:relative;
+}
+
+.addMessage{
+    position: absolute;
+    bottom: 0;
 }
