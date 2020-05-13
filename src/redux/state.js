@@ -29,7 +29,7 @@ let state = {
             {id: 5, message: "Have a nice day!"},
             {id: 6, message: "lmao"},
         ],
-        newMessageText: "",
+        newTextMessage: "",
     },
     sidebar: {
         profiles: [
@@ -64,8 +64,19 @@ export let updatePost = (newText) => {
     renderEntireTree(state);
 }
 
-export let updateMessageText = (newMessageText) => {
-    state.dialogPage.newMessageText = newMessageText;
+export let addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogPage.newTextMessage,
+    };
+
+    state.dialogPage.messages.push(newMessage);
+    state.dialogPage.newTextMessage = '';
+    renderEntireTree(state);
+}
+
+export let updateTextMessage = (newTextMessage) => {
+    state.dialogPage.newTextMessage = newTextMessage;
     renderEntireTree(state);
 }
 
