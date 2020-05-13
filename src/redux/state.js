@@ -28,7 +28,8 @@ let state = {
             {id: 4, message: "See you soon"},
             {id: 5, message: "Have a nice day!"},
             {id: 6, message: "lmao"},
-        ]
+        ],
+        newMessageText: "",
     },
     sidebar: {
         profiles: [
@@ -60,6 +61,11 @@ export let addPost = () => {
 
 export let updatePost = (newText) => {
     state.profilePage.newTextPost = newText;
+    renderEntireTree(state);
+}
+
+export let updateMessageText = (newMessageText) => {
+    state.dialogPage.newMessageText = newMessageText;
     renderEntireTree(state);
 }
 
