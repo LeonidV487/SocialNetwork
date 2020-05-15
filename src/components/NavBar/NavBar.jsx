@@ -5,7 +5,7 @@ import Friends from "./Friends/Friends";
 
 const NavBar = (props) => {
 
-    let friends = props.state.profiles.map(friend => {
+    let friends = props.sidebar.profiles.map(friend => {
         if (friend.id > 9){
             return false;
         }
