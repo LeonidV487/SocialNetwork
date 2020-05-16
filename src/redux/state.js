@@ -10,16 +10,12 @@ let store = {
         },
         dialogPage: {
             dialogs: [
-                {id: 1, name: "Leonid", image: "https://icon-icons.com/icons2/1371/PNG/72/muslimman_90813.png"},
-                {id: 2, name: "Valeriy", image: "https://icon-icons.com/icons2/1371/PNG/72/donaldtrump_90831.png"},
-                {id: 3, name: "Artemiy", image: "https://icon-icons.com/icons2/1371/PNG/72/nikolatesla_90830.png"},
-                {
-                    id: 4,
-                    name: "Anastasia",
-                    image: "https://icon-icons.com/icons2/1371/PNG/72/traditionaljapanesewoman_90815.png"
-                },
-                {id: 5, name: "George", image: "https://icon-icons.com/icons2/1371/PNG/72/luissuarez_90807.png"},
-                {id: 6, name: "Allen", image: "https://icon-icons.com/icons2/1371/PNG/72/cristianoronaldo_90805.png"},
+                {id: 1, name: "Leonid", image: "/images/diver-avatar_114346.png"},
+                {id: 2, name: "Valeriy", image: "/images/muslimman_90813.png"},
+                {id: 3, name: "Artemiy", image: "/images/davegrohl_90806.png"},
+                {id: 4, name: "Anastasia", image: "/images/trinity_90829.png"},
+                {id: 5, name: "George", image: "/images/fireman-avatar_114351.png"},
+                {id: 6, name: "Allen", image: "/images/cristianoronaldo_90805.png"},
             ],
             messages: [
                 {id: 1, message: "Hi"},
@@ -33,22 +29,22 @@ let store = {
         },
         sidebar: {
             profiles: [
-                {id: 1, name: "Leonid", image: "https://icon-icons.com/icons2/1371/PNG/72/muslimman_90813.png"},
-                {id: 2, name: "Valeriy", image: "https://icon-icons.com/icons2/1371/PNG/72/donaldtrump_90831.png"},
-                {id: 3, name: "Artemiy", image: "https://icon-icons.com/icons2/1371/PNG/72/nikolatesla_90830.png"},
-                {
-                    id: 4,
-                    name: "Anastasia",
-                    image: "https://icon-icons.com/icons2/1371/PNG/72/traditionaljapanesewoman_90815.png"
-                },
-                {id: 5, name: "George", image: "https://icon-icons.com/icons2/1371/PNG/72/luissuarez_90807.png"},
-                {id: 6, name: "Allen", image: "https://icon-icons.com/icons2/1371/PNG/72/cristianoronaldo_90805.png"},
+                {id: 1, name: "Leonid", image: "/images/diver-avatar_114346.png"},
+                {id: 2, name: "Valeriy", image: "/images/muslimman_90813.png"},
+                {id: 3, name: "Artemiy", image: "/images/davegrohl_90806.png"},
+                {id: 4, name: "Anastasia", image: "/images/trinity_90829.png"},
+                {id: 5, name: "George", image: "/images/fireman-avatar_114351.png"},
+                {id: 6, name: "Allen", image: "/images/cristianoronaldo_90805.png"},
             ],
         }
     },
 
     _callSubscriber() {
         console.log('Body of function is empty')
+    },
+
+    getState(){
+        return this._state;
     },
 
     addPost() {
