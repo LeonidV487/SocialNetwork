@@ -43,8 +43,12 @@ let store = {
         console.log('Body of function is empty')
     },
 
-    getState(){
+    getState() {
         return this._state;
+    },
+
+    subscribe(observer) {
+        this._callSubscriber = observer;
     },
 
     addPost() {
@@ -53,15 +57,14 @@ let store = {
             message: this._state.profilePage.newTextPost,
             likeCount: 0,
         };
-
         this._state.profilePage.posts.push(newPost);
         this._state.profilePage.newTextPost = '';
-        this._callSubscriber(this);
+        this._callSubscriber(this._state);
     },
 
-    updatePost(newText){
-        this._state.profilePage.newTextPost = newText;
-        this._callSubscriber(this);
+    updatePost(newTextPost) {
+        this._state.profilePage.newTextPost = newTextPost;
+        this._callSubscriber(this._state);
     },
 
     addMessage() {
@@ -72,17 +75,25 @@ let store = {
 
         this._state.dialogPage.messages.push(newMessage);
         this._state.dialogPage.newTextMessage = '';
-        this._callSubscriber(this);
+        this._callSubscriber(this._state);
     },
 
     updateTextMessage(newTextMessage) {
         this._state.dialogPage.newTextMessage = newTextMessage;
-        this._callSubscriber(this);
+        this._callSubscriber(this._state);
     },
 
-    subscribe(observer) {
-        this._callSubscriber = observer;
-    },
+    dispatch(action) {
+        if (action.type === "ADD-POST") {
+            this.addPost();
+        } else if (action.type === "UPDATE-NEW-TEXT-POST") {
+            this.updatePost(action.newTextPost);
+        } else if (action.type === "ADD-MESSAGE") {
+            this.addMessage();
+        } else if (action.type === "UPDATE-NEW-TEXT-MESSAGE") {
+            this.updateTextMessage(action.newTextMessage);
+        }
+    }
 }
 
 export default store;

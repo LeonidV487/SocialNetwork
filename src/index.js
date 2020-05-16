@@ -7,18 +7,18 @@ import * as serviceWorker from './serviceWorker';
 import store from "./redux/state";
 
 
-let renderEntireTree = (store) => {
+let renderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App store={store}/>
+                <App state={state} dispatch={store.dispatch.bind(store)}/>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
 
-renderEntireTree(store);
+renderEntireTree(store.getState());
 
 store.subscribe(renderEntireTree);
 
