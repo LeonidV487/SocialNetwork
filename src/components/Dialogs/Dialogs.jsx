@@ -2,25 +2,22 @@ import React from "react";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import classes from './Dialogs.module.css'
-import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/state";
+import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/dialog-reducer";
 
 const Dialogs = (props) => {
-
 
     let dialogElements = props.dialogPage.dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name}
                                                                             image={dialog.image}/>);
 
     let messageElements = props.dialogPage.messages.map(message => <Message message={message.message}/>);
 
-    let newMessageElement = React.createRef();
-
     let addMessage = () => {
         let action = addMessageActionCreator();
         props.dispatch(action);
     }
 
-    let updateMessage = () => {
-        let text = newMessageElement.current.value;
+    let updateMessage = (event) => {
+        let text = event.target.value
         let action = updateMessageActionCreator(text);
         props.dispatch(action);
     }
@@ -31,11 +28,13 @@ const Dialogs = (props) => {
                 {dialogElements}
             </div>
             <div className={classes.messages}>
-                {messageElements}
+                <div>
+                    {messageElements}
+                </div>
                 <div className={classes.addMessage}>
                     <div>
-                        <textarea onChange={updateMessage}
-                                  ref={newMessageElement}
+                        <textarea placeholder='Enter your message'
+                                  onChange={updateMessage}
                                   value={props.dialogPage.newTextMessage}
                         />
                     </div>

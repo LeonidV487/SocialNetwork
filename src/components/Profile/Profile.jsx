@@ -6,7 +6,7 @@ import classes from './Profile.module.css';
 const Profile = (props) => {
     return (
         <div>
-            <ProfileInfo/>
+            <ProfileInfo images={props.profilePage.images}/>
             <MyPosts posts={props.profilePage.posts}
                      newTextPost={props.profilePage.newTextPost}
                      dispatch={props.dispatch}

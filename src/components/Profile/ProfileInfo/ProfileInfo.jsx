@@ -5,7 +5,7 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div className={classes.imageWrapper}>
-                <img src='https://wallpaperplay.com/walls/full/5/a/9/15835.jpg' alt="horizontal"/>
+                <img src={props.images.mainPageImage} alt="horizontal"/>
             </div>
             <div className={classes.description}>
                 ava + description
