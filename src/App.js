@@ -11,7 +11,6 @@ import Friends from "./components/Friends/Friends";
 import {Route} from "react-router-dom";
 
 const App = (props) => {
-    debugger;
     return (
         <div className='app-wrapper'>
             <Header/>
