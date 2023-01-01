@@ -1,22 +1,23 @@
 import React from "react";
 import {addPostActionCreator, updatePostActionCreator} from "../../../redux/profile-reducer";
 import MyPosts from "./MyPosts";
+import {useDispatch, useSelector} from "react-redux";
 
-const MyPostsContainer = (props) => {
-
-    let state = props.store.getState();
+const MyPostsContainer = () => {
+    const posts = useSelector(({profilePage}) => profilePage.posts)
+    const dispatch = useDispatch()
 
     let addPost = () => {
         let action = addPostActionCreator();
-        props.store.dispatch(action);
+        dispatch(action);
     }
 
     let updatePost = (text) => {
         let action = updatePostActionCreator(text);
-        props.store.dispatch(action);
+        dispatch(action);
     }
 
-    return (<MyPosts addPost={addPost} updatePost={updatePost} posts={state.profilePage.posts}/>);
+    return (<MyPosts addPost={addPost} updatePost={updatePost} posts={posts}/>);
 }
 
 export default MyPostsContainer;

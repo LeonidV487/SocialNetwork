@@ -1,7 +1,7 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-TEXT-MESSAGE";
 
-let initialState = {
+const initialState = {
     dialogs: [
         {id: 1, name: "Leonid", image: "/images/diver-avatar_114346.png"},
         {id: 2, name: "Valeriy", image: "/images/muslimman_90813.png"},
@@ -29,12 +29,15 @@ const dialogReducer = (state = initialState, action) => {
                 id: 6,
                 message: state.newTextMessage,
             };
-            state.messages.push(newMessage);
-            state.newTextMessage = '';
-            return state;
+            return {
+                ...state,
+                messages: [...state.messages, newMessage]
+            };
         case UPDATE_NEW_MESSAGE_TEXT:
-            state.newTextMessage = action.newTextMessage;
-            return state;
+            return {
+                ...state,
+                newTextMessage: action.newTextMessage
+            };
         default:
             return state;
     }

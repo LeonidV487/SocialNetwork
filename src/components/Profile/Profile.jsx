@@ -1,14 +1,15 @@
 import React from "react";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPosts from "./MyPosts/MyPosts";
-import classes from './Profile.module.css';
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import {useSelector} from "react-redux";
 
-const Profile = (props) => {
+const Profile = () => {
+    const images = useSelector(({profilePage}) => profilePage.images);
+
     return (
         <div>
-            <ProfileInfo images={props.store.getState().profilePage.images}/>
-            <MyPostsContainer store={props.store}/>
+            <ProfileInfo images={images}/>
+            <MyPostsContainer />
         </div>
     );
 }
