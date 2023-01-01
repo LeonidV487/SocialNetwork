@@ -8,12 +8,12 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         props.addPost();
-    }
+    };
 
     let updatePost = (event) => {
         let text = event.target.value;
         props.updatePost(text);
-    }
+    };
 
     return (
         <div className={classes.postBlock}>
