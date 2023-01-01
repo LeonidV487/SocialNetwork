@@ -4,20 +4,26 @@ import MyPosts from "./MyPosts";
 import {useDispatch, useSelector} from "react-redux";
 
 const MyPostsContainer = () => {
-    const posts = useSelector(({profilePage}) => profilePage.posts)
+    const profilePageData = useSelector(({profilePage}) => ({
+        posts: profilePage.posts,
+        newTextPost: profilePage.newTextPost
+    }));
     const dispatch = useDispatch()
 
-    let addPost = () => {
-        let action = addPostActionCreator();
-        dispatch(action);
+    const addPost = () => {
+        dispatch(addPostActionCreator());
     }
 
-    let updatePost = (text) => {
-        let action = updatePostActionCreator(text);
-        dispatch(action);
+    const updatePost = (text) => {
+        dispatch(updatePostActionCreator(text));
     }
 
-    return (<MyPosts addPost={addPost} updatePost={updatePost} posts={posts}/>);
+    return <MyPosts
+        addPost={addPost}
+        updatePost={updatePost}
+        posts={profilePageData.posts}
+        newTextPost={profilePageData.newTextPost}
+    />
 }
 
 export default MyPostsContainer;
