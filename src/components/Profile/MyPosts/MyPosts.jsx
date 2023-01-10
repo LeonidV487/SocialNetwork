@@ -28,7 +28,7 @@ const MyPosts = ({posts, addPost, updatePost, newTextPost}) => {
                     />
                 </div>
                 <div>
-                    <button onClick={addPostLocal}>Add post</button>
+                    <button onClick={addPostLocal}>{'Add post'}</button>
                 </div>
             </div>
             <div className={classes.posts}>
